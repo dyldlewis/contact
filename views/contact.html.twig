@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>YOU HAVE BEEN NOWHERE</title>
+</head>
+<body>
+    <h1>Places you've been</h1>
+        {% if contacts is not empty %}
+            <p>Here are all your places:</p>
+            <ul>
+                {% for contact in contacts %}
+                    <li>{{ contact.getUserName }}</li>
+                    <p>{{ contact.getNumber }}</p>
+                    <p>{{ contact.getAddress}}
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    <form action='/places' method='post'>
+        <label for='user_name'>Contact Name</label>
+        <input id='user_name' name='user_name' type='text'>
+        <label for='number'>Phone Number</label>
+        <input id='number' name='number' type='text'>
+        <label for='address'>Enter Address</label>
+
+        <button type='submit'>Add Contact</button>
+    </form>
+    <form action='/delete_places' method='post'>
+        <button type='submit'>delete</button>
+    </form>
+</body>
+</html>
