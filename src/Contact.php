@@ -12,7 +12,7 @@ class Contact
         $this->address = $address;
     }
 
-    function setName($new_user_name)
+    function setUserName($new_user_name)
     {
         $this->user_name = (string) $new_user_name;
     }
@@ -44,17 +44,17 @@ class Contact
 
     function save()
     {
-        array_push($_SESSION['list_of_tasks'], $this);
+        array_push($_SESSION['list_of_contacts'], $this);
     }
 
     static function getAll()
     {
-        return $_SESSION['list_of_tasks'];
+        return $_SESSION['list_of_contacts'];
     }
 
     static function deleteAll()
     {
-        $_SESSION['list_of_tasks'] = array();
+        $_SESSION['list_of_contacts'] = array();
     }
 }
 ?>
